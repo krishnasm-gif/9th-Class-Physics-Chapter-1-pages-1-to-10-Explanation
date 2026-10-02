@@ -1,0 +1,1 @@
+# 9th-Class-Physics-Chapter-1-pages-1-to-10-Explanation
