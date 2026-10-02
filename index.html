@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 9 Physical Science - Chapter 1: Matter Around Us</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --bg-light: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --border-color: #cbd5e1;
+            --accent: #eff6ff;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.8rem;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        /* Upper Index Navigation */
+        .top-index {
+            background: var(--card-bg);
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin: 1.5rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+        }
+
+        .top-index a {
+            background: var(--accent);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s ease;
+        }
+
+        .top-index a:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+            font-size: 1.3rem;
+        }
+
+        h3 {
+            color: var(--secondary);
+            font-size: 1.05rem;
+            margin-top: 1.2rem;
+        }
+
+        .bilingual-box {
+            background: var(--accent);
+            border-left: 4px solid var(--primary);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .english-text {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .telugu-text {
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        /* Tables for Glossary */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--accent);
+            color: var(--primary);
+        }
+
+        /* Scroll to Top Button */
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        #scrollTopBtn:hover {
+            background-color: var(--secondary);
+        }
+
+        /* Visitor Modal Overlay */
+        #visitorModal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            padding: 1rem;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .modal-content h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.3rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.6rem;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        .modal-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            width: 100%;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .modal-btn:hover {
+            background: var(--secondary);
+        }
+
+        #timerDisplay {
+            font-size: 0.85rem;
+            color: #64748b;
+            text-align: center;
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.5rem; }
+            .container { padding: 0.5rem; }
+            section { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Visitor Modal for Tracking -->
+    <div id="visitorModal">
+        <div class="modal-content">
+            <h3>Student Login / విద్యార్థి లాగిన్</h3>
+            <p style="font-size: 0.9rem; color: #64748b;">Enter your details to access the page and record your study time.</p>
+            <form id="visitorForm">
+                <div class="form-group">
+                    <label for="visitorName">Full Name / పూర్తి పేరు:</label>
+                    <input type="text" id="visitorName" required placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="visitorRoll">Roll Number / రోల్ నంబర్:</label>
+                    <input type="text" id="visitorRoll" required placeholder="Enter your roll number">
+                </div>
+                <button type="submit" class="modal-btn">Start Reading / చదవడం ప్రారంభించండి</button>
+            </form>
+        </div>
+    </div>
+
+    <header>
+        <h1>Class 9 Physical Science - Chapter 1</h1>
+        <p>MATTER AROUND US (మన చుట్టూ ఉన్న పదార్థం)</p>
+        <div id="timerDisplay">Time Spent: 0s</div>
+    </header>
+
+    <div class="container">
+        <!-- Upper Index Navigation (Working anchor links) -->
+        <nav class="top-index">
+            <a href="#intro">Introduction</a>
+            <a href="#states">States of Matter</a>
+            <a href="#properties">Properties</a>
+            <a href="#diffusion">Diffusion</a>
+            <a href="#nature">Nature of Matter</a>
+            <a href="#glossary">Glossary</a>
+            <a href="#exercises">Exercises & Q&A</a>
+        </nav>
+
+        <!-- Section 1: Introduction -->
+        <section id="intro">
+            <h2>1. Introduction to Matter (పదార్థం పరిచయం)</h2>
+            <div class="bilingual-box">
+                <div class="english-text">You may have heard the phrases like 'what is the matter?', 'the Matter was closed'. Have you ever wondered what this 'matter' is? Meaning of this term is very different for scientists that of from a common man.</div>
+                <div class="telugu-text">'విషయం ఏమిటి?', 'ఆ కేసు ముగిసింది' వంటి పదబంధాలను మీరు వినే ఉంటారు. ఈ 'పదార్థం' (matter) అంటే ఏమిటో ఎప్పుడైనా ఆలోచించారా? సామాన్య మనిషికి, శాస్త్రవేత్తలకు ఈ పదం యొక్క అర్థం చాలా భిన్నంగా ఉంటుంది.</div>
+            </div>
+            <div class="bilingual-box">
+                <div class="english-text">All the things around us which exist in a variety of shapes, sizes and texture are also examples of 'matter'. The water we drink, our food, clothes, the air we breathe, and even our body are examples of matter. Anything in this world that occupies space and has mass is considered as matter.</div>
+                <div class="telugu-text">మన చుట్టూ వివిధ ఆకారాలు, పరిమాణాలు మరియు స్పర్శ రూపంలో ఉన్న అన్నీ పదార్థానికి ఉదాహరణలే. మనం తాగే నీరు, ఆహారం, బట్టలు, పీల్చే గాలి మరియు మన శరీరం కూడా పదార్థమే. ఈ ప్రపంచంలో స్థలాన్ని ఆక్రమించి, ద్రవ్యరాశిని కలిగి ఉన్న ప్రతిదానిని పదార్థం అంటారు.</div>
+            </div>
+        </section>
+
+        <!-- Section 2: States of Matter -->
+        <section id="states">
+            <h2>2. States of Matter (పదార్థం యొక్క స్థితులు)</h2>
+            <div class="bilingual-box">
+                <div class="english-text">In previous classes, you had learnt that water can exist as a solid (ice), a liquid, or as a gas (water vapour). We say that solids, liquids, and gas are three different states of matter.</div>
+                <div class="telugu-text">నీరు ఘన (ఐస్), ద్రవ లేదా వాయు (నీటి ఆవిరి) రూపాలలో ఉండగలదని మీరు గత తరగతులలో నేర్చుకున్నారు. ఘన, ద్రవ, వాయువులు పదార్థం యొక్క మూడు వేర్వేరు స్థితులు.</div>
+            </div>
+            <div class="bilingual-box">
+                <div class="english-text">For example, wood and coal are solids, while petrol and milk are liquids. However, the properties of petrol and milk are quite different from each other.</div>
+                <div class="telugu-text">ఉదాహరణకు, చెక్క మరియు బొగ్గు ఘన పదార్థాలు, పెట్రోల్ మరియు పాలు ద్రవాలు. అయితే పెట్రోల్ మరియు పాలు వేర్వేరు ధర్మాలను కలిగి ఉంటాయి.</div>
+            </div>
+        </section>
+
+        <!-- Section 3: Properties of Solids, Liquids, and Gases -->
+        <section id="properties">
+            <h2>3. Properties of Solids, Liquids, and Gases (ఘన, ద్రవ, వాయువుల ధర్మങ്ങൾ)</h2>
+            <div class="bilingual-box">
+                <div class="english-text">Solids have a definite shape and a fixed volume. Dropping a book or a pen on the floor shows it remains rigid with a definite shape and fixed volume.</div>
+                <div class="telugu-text">ఘన పదార్థాలు ఖచ్చితమైన ఆకారాన్ని మరియు స్థిరమైన పరిమాణాన్ని కలిగి ఉంటాయి. పుస్తకం లేదా పెన్ను కింద పడేస్తే అవి దృఢంగా ఉండి మారవు.</div>
+            </div>
+            <div class="bilingual-box">
+                <div class="english-text">Liquids take the shape of the container they are poured into, but their volume remains the same. They can flow easily and are called fluids.</div>
+                <div class="telugu-text">ద్రవాలు ఏ పాత్రలో పోస్తే ఆ పాత్ర ఆకారాన్ని పొందుతాయి, కానీ వాటి పరిమాణం మారదు. ఇవి సులభంగా ప్రవహిస్తాయి, అందుకే వీటిని ఫ్లూయిడ్స్ అంటారు.</div>
+            </div>
+            <div class="bilingual-box">
+                <div class="english-text">Gases like CNG neither have a fixed shape nor a fixed volume. They are highly compressible compared to liquids and solids.</div>
+                <div class="telugu-text">సీఎన్‌జీ వంటి వాయువులకు నిర్దిష్టమైన ఆకారం లేదా స్థిరమైన పరిమాణం ఉండదు. ఘన, ద్రవ పదార్థాలతో పోలిస్తే ఇవి అత్యధిక సంపీడనతను కలిగి ఉంటాయి.</div>
+            </div>
+        </section>
+
+        <!-- Section 4: Diffusion -->
+        <section id="diffusion">
+            <h2>4. Diffusion (వ్యాపనం)</h2>
+            <div class="bilingual-box">
+                <div class="english-text">The movement of air, vapours of scent, and smoke from one place to another is known as diffusion. Solids and liquids can diffuse into liquids, while gases diffuse into gases very rapidly.</div>
+                <div class="telugu-text">గాలి, సువాసన ఆవిరి మరియు పొగ ఒక చోటు నుండి మరో చోటుకి కదలడాన్ని వ్యాపనం అంటారు. ఘన మరియు ద్రవ పదార్థాలు ద్రవాలలోకి వ్యాపిస్తాయి, అలాగే వాయువులు వాయువులలో అత్యంత వేగంగా వ్యాపిస్తాయి.</div>
+            </div>
+        </section>
+
+        <!-- Section 5: Nature of Matter -->
+        <section id="nature">
+            <h2>5. Physical Nature of Matter (పదార్థం యొక్క భౌతిక స్వభావం)</h2>
+            <div class="bilingual-box">
+                <div class="english-text">All matter is made of very tiny particles. Liquid particles have space between them where solid particles can enter upon dissolving. Particles of matter also attract each other with a force of attraction.</div>
+                <div class="telugu-text">పదార్థం అంతా అతి సూక్ష్మమైన కణాలతో తయారైంది. ద్రవ పదార్థ కణాల మధ్య ఖాళీ స్థలాలు ఉంటాయి, వాటిలోకి ఘన పదార్థాలు కరిగిపోతాయి. పదార్థ కణాలు పరస్పరం ఆకర్షణ బలాన్ని కలిగి ఉంటాయి.</div>
+            </div>
+        </section>
+
+        <!-- Glossary Section -->
+        <section id="glossary">
+            <h2>Glossary Vocabulary with Examples (పదకోశము - ఉదాహరణలతో)</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Word / పదము</th>
+                        <th>English Example / ఇంగ్లీష్ ఉదాహరణ</th>
+                        <th>Telugu Translation / తెలుగు ఉదాహరణ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Matter (పదార్థం)</strong></td>
+                        <td>Anything that occupies space and has mass is matter.</td>
+                        <td>స్థలాన్ని ఆక్రమించి, ద్రవ్యరాశిని కలిగి ఉన్న ప్రతిదానిని పదార్థం అంటారు.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Solid (ఘన పదార్థం)</strong></td>
+                        <td>A wooden block has a definite shape and fixed volume.</td>
+                        <td>చెక్క దిమ్మె ఖచ్చితమైన ఆకారాన్ని మరియు స్థిరమైన పరిమాణాన్ని కలిగి ఉంటుంది.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fluid (ద్రవిభవన పదార్థం / ఫ్లూయిడ్)</strong></td>
+                        <td>Liquids can flow easily and are called fluids.</td>
+                        <td>ద్రవాలు సులభంగా ప్రవహిస్తాయి, అందుకే వాటిని ఫ్లూయిడ్స్ అంటారు.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Compressibility (సంపీడనత)</strong></td>
+                        <td>Gases are highly compressible as compared to liquids and solids.</td>
+                        <td>ఘన, ద్రవ పదార్థాలతో పోలిస్తే వాయువులు అత్యధిక సంపీడనతను కలిగి ఉంటాయి.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Diffusion (వ్యాపనం)</strong></td>
+                        <td>The movement of scent and smoke across a room is known as diffusion.</td>
+                        <td>గది అంతటా సువాసన మరియు పొగ కణాలు కదలడాన్ని వ్యాపనం అంటారు.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sublimation (ఉర్ధ్వపాతనం)</strong></td>
+                        <td>Camphor changes directly from solid to gas without forming liquid.</td>
+                        <td>కర్పూరం ద్రవ రూపంలోకి మారకుండా నేరుగా వాయువుగా మారుతుంది.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Complete Exercises and Q&A Section -->
+        <section id="exercises">
+            <h2>Let Us Improve Our Learning - Complete Chapter Exercises & Q&A (అభ్యాసాలు మరియు ప్రశ్నలు-జవాబులు)</h2>
+
+            <h3>Reflections on Concepts (అవగాహన - ప్రతిబింబాలు)</h3>
+
+            <h4>1. Explain diffusion phenomenon based on the states of matter.</h4>
+            <div class="bilingual-box">
+                <div class="english-text"><strong>Answer:</strong> Diffusion is the intermingling of particles of matter on their own. The rate of diffusion depends on the states of matter: gases diffuse fastest because their particles move with very high speeds and have large spaces between them; liquids diffuse slower than gases; and solids diffuse very slowly into liquids.</div>
+                <div class="telugu-text"><strong>జవాబు:</strong> వివిధ పదార్థాల కణాలు అంతట అవే కలవడాన్ని వ్యాపనం అంటారు. వాయువులలో కణాల వేగం మరియు ఖాళీ స్థలాలు ఎక్కువగా ఉండటం వలన వ్యాపన వేగం అత్యధికంగా ఉంటుంది; ద్రవాలలో కొంచెం తక్కువగా, ఘన పదార్థాలలో చాలా నెమ్మదిగా జరుగుతుంది.</div>
+            </div>
+
+            <h4>2. Mention the properties of solids.</h4>
+            <div class="bilingual-box">
+                <div class="english-text"><strong>Answer:</strong> 
+                    * Solids have a definite shape and a fixed volume.
+                    * They are rigid and have distinct boundaries.
+                    * They do not flow and have very low compressibility.</div>
+                <div class="telugu-text"><strong>జవాబు:</strong> 
+                    * ఘన పదార్థాలు ఖచ్చితమైన ఆకారాన్ని మరియు స్థిరమైన పరిమాణాన్ని కలిగి ఉంటాయి.
+                    * ఇవి దృఢంగా ఉంటాయి మరియు స్పష్టమైన సరిహద్దులను కలిగి ఉంటాయి.
+                    * ఇవి ప్రవహించవు మరియు వీటికి సంపీడనత చాలా తక్కువ.</div>
+            </div>
+
+            <h4>3. Mention the properties of liquids.</h4>
+            <div class="bilingual-box">
+                <div class="english-text"><strong>Answer:</strong> 
+                    * Liquids have a fixed volume but no fixed shape (they take the shape of the container).
+                    * They can flow easily and are called fluids.
+                    * Their compressibility is low compared to gases.</div>
+                <div class="telugu-text"><strong>జవాబు:</strong> 
+                    * ద్రవాలు స్థిరమైన పరిమాణాన్ని కలిగి ఉంటాయి కానీ స్థిరమైన ఆకారం ఉండదు (పాత్ర ఆకారాన్ని పొందుతాయి).
+                    * ఇవి సులభంగా ప్రవహిస్తాయి, అందుకే వీటిని ఫ్లూయిడ్స్ అంటారు.
+                    * వాయువులతో పోలిస్తే వీటికి సంపీడనత తక్కువ.</div>
+            </div>
+
+            <h4>4. What is a fluid?</h4>
+            <div class="bilingual-box">
+                <div class="english-text"><strong>Answer:</strong> Any substance that can flow easily is called a fluid. Both liquids and gases are considered fluids.</div>
+                <div class="telugu-text"><strong>జవాబు:</strong> సులభంగా ప్రవగించగల దేనినైనా 'ఫ్లూయిడ్' (Fluid) అంటారు. ద్రవాలు మరియు వాయువులు రెండూ ఫ్లూయిడ్స్‌‌గా పరిగణించబడతాయి.</div>
+            </div>
+
+            <h4>5. Mention the properties of gases.</h4>
+            <div class="bilingual-box">
+                <div class="english-text"><strong>Answer:</strong> 
+                    * Gases neither have a fixed shape nor a fixed volume.
+                    * They are highly compressible compared to liquids and solids.
+                    * They diffuse very rapidly in all directions.</div>
+                <div class="telugu-text"><strong>జవాబు:</strong> 
+                    * వాయువులకు నిర్దిష్టమైన ఆకారం లేదా స్థిరమైన పరిమాణం ఉండదు.
+                    * ఘన, ద్రవ పదార్థాలతో పోలిస్తే ఇవి అత్యధిక సంపీడనతను కలిగి ఉంటాయి.
+                    * ఇవి అన్ని దిశలలో చాలా వేగంగా వ్యాపిస్తాయి.</div>
+            </div>
+
+            <h4>6. Give two daily life situations where you observe the diffusion.</h4>
+            <div class="bilingual-box">
+                <div class="english-text"><strong>Answer:</strong> 
+                    1. Spreading of the aroma of incense sticks or perfume across a room.
+                    2. Spreading of a drop of ink or potassium permanganate in water.</div>
+                <div class="telugu-text"><strong>జవాబు:</strong> 
+                    1. అగరుబత్తి సువాసన లేదా పెర్ఫ్యూమ్ వాసన గది అంతటా వ్యాపించడం.
+                    2. నీటిలో మైకాల చుక్క లేదా పొటాషియం పర్మాంగనేట్ కరిగి రంగు మారడం.</div>
+            </div>
+
+            <h3>Application of Concepts (అప్లికేషన్ ఆఫ్ కాన్సెప్ట్స్)</h3>
+
+            <h4>1. Mention works where we use compressibility in our daily life?</h4>
+            <div class="bilingual-box">
+                <div class="english-text"><strong>Answer:</strong> 
+                    * Compressed Natural Gas (CNG) used as a clean fuel in automobiles.
+                    * Liquefied Petroleum Gas (LPG) cylinders used for domestic cooking.
+                    * Oxygen cylinders used in hospitals for patients.</div>
+                <div class="telugu-text"><strong>జవాబు:</strong> 
+                    * వాహనాలలో ఇంధనంగా ఉపయోగించే సంపీడిత సహజ వాయువు (CNG).
+                    * ఇళ్లలో వంట కోసం ఉపయోగించే ఎల్పీజీ (LPG) సిలిండర్లు.
+                    * ఆసుపత్రులలో రోగులకు ఉపయోగించే ఆక్సిజన్ సిలిండర్లు.</div>
+            </div>
+
+            <h4>2. Mention the situations where we use diffusion in our day-to-day life.</h4>
+            <div class="bilingual-box">
+                <div class="english-text"><strong>Answer:</strong> 
+                    * Dissolution of oxygen and carbon dioxide in water, supporting aquatic plants and animals.
+                    * Exchange of oxygen from lungs into blood and carbon dioxide from blood into lungs during respiration.</div>
+                <div class="telugu-text"><strong>జవాబు:</strong> 
+                    * నీటిలో ఆక్సిజన్ మరియు కార్బన్ డై ఆక్సైడ్ కరిగి జలచరాల మనుగడకు సహకరించడం.
+                    * శ్వాసక్రియ సమయంలో ఊపిరితిత్తులలో ఆక్సిజన్ రక్తం లోనికి, కార్బన్ డై ఆక్సైడ్ రక్తం నుండి ఊపిరితిత్తులలోకి వ్యాపించడం.</div>
+            </div>
+
+            <h4>3. How can we smell perfume sitting several meters away from the source?</h4>
+            <div class="bilingual-box">
+                <div class="english-text"><strong>Answer:</strong> The volatile particles of perfume evaporate into the air and mix with air particles. Due to rapid diffusion of gases, these scented particles move quickly across the room and reach our nose.</div>
+                <div class="telugu-text"><strong>జవాబు:</strong> పెర్ఫ్యూమ్ కణాలు ఆవిరై గాలి కణాలతో కలుస్తాయి. వాయువుల యొక్క అత్యధిక వ్యాపన వేగం కారణంగా, ఆ సువాసన కణాలు గది అంతటా ప్రయాణించి మన ముక్కును చేరుకుంటాయి.</div>
+            </div>
+
+            <h4>4. How do you prove that the speed of diffusion of ammonia is more than that of the speed of diffusion of hydrochloric acid?</h4>
+            <div class="bilingual-box">
+                <div class="english-text"><strong>Answer:</strong> By taking a long glass tube, inserting cotton soaked in liquid ammonia at one end and hydrochloric acid at the other end. Both gases diffuse inside the tube and react to form a white ring of ammonium chloride. The white ring forms closer to the HCl end, proving that ammonia gas travels faster.</div>
+                <div class="telugu-text"><strong>జవాబు:</strong> ఒక పొడవైన గాజు గొట్టం తీసుకొని, ఒక ముఖాన అమ్మోనియా ద్రావణం సోకిన దూదిని, మరో ముఖాన హైడ్రోక్లోరిక్ ఆమ్లం సోకిన దూదిని ఉంచాలి. రెండు వాయువులు వ్యాపించి అమ్మోనియం క్లోరైడ్ తెల్లని వలయాన్ని ఏర్పరుస్తాయి. ఈ వలయం HCl వైపునకు దగ్గరగా ఏర్పడుతుంది, దీనివల్ల అమ్మోనియా వేగంగా ప్రయాణించిందని నిరూపించవచ్చు.</div>
+            </div>
+
+            <h4>5. Give examples that the matter which will be available in different states.</h4>
+            <div class="bilingual-box">
+                <div class="english-text"><strong>Answer:</strong> 
+                    * Water exists as ice (solid), water (liquid), and water vapour (gas).
+                    * Coconut oil is liquid at room temperature but becomes solid on cooling.
+                    * Camphor and naphthalene are solids that directly change into gas upon heating or exposure.</div>
+                <div class="telugu-text"><strong>జవాబు:</strong> 
+                    * నీరు ఐస్ (ఘనం), నీరు (ద్రవం), నీటి ఆవిరి (వాయువు) అనే మూడు రూపాలలో లభిస్తుంది.
+                    * కొబ్బరి నూనె సాధారణంగా ద్రవంగా ఉంటుంది, చల్లబరిస్తే ఘనంగా మారుతుంది.
+                    * కర్పూరం మరియు నాఫ్తలీన్ బంతులు ఘన రూపం నుండి నేరుగా వాయు రూపంలోకి మారుతాయి.</div>
+            </div>
+
+            <h4>6. Draw the diagram showing the experimental arrangement to verify the speed of diffusion of two gases.</h4>
+            <div class="bilingual-box">
+                <div class="english-text"><strong>Answer:</strong> A long glass tube with scale, rubber corks at both ends, cotton soaked in HCl at one end and ammonia ($NH_3$) at the other end, showing the formation of ammonium chloride white fumes ring inside the tube (Refer to textbook Figure 7).</div>
+                <div class="telugu-text"><strong>జవాబు:</strong> స్కేల్ అమర్చిన పొడవైన గాజు గొట్టం, రెండు చివరల రబ్బరు కార్కులు, HCl మరియు అమ్మోనియా సోకిన దూది ముక్కలతో కూడిన ప్రయోగ అమరికను గీయాలి (పాఠ్యపుస్తకంలోని చిత్రం-7 చూడండి).</div>
+            </div>
+
+            <h3>Higher Order Thinking Questions (ఉన్నత స్థాయి ఆలోచనా ప్రశ్నలు)</h3>
+
+            <h4>1. We can't rejoin the broken chalk easily. Give reason.</h4>
+            <div class="bilingual-box">
+                <div class="english-text"><strong>Answer:</strong> The particles of chalk are held together by strong intermolecular forces of attraction over a very small distance. When a chalk breaks, the distance between the broken surfaces becomes too large for these attractive forces to act effectively.</div>
+                <div class="telugu-text"><strong>జవాబు:</strong> చాక్పీస్ కణాల మధ్య బలమైన ఆకర్షణ బలాలు అతి తక్కువ దూరంలో మాత్రమే పనిచేస్తాయి. చాక్పీస్ విరిగిపోయినప్పుడు ఆ ఉపరితలాల మధ్య దూరం పెరిగిపోవడం వల్ల ఆకర్షణ బలాలు పనిచేయవు, అందుకే సులభంగా కలపలేము.</div>
+            </div>
+
+            <h4>2. Is the space between the particles in the matter influence the speed of diffusion? Explain.</h4>
+            <div class="bilingual-box">
+                <div class="english-text"><strong>Answer:</strong> Yes, the space between particles greatly influences the speed of diffusion. Gases have large spaces between their particles, allowing them to move and mix rapidly, resulting in a high rate of diffusion compared to liquids and solids.</div>
+                <div class="telugu-text"><strong>జవాబు:</strong> అవును, పదార్థ కణాల మధ్య గల ఖాళీ స్థలం వ్యాపన వేగాన్ని బాగా ప్రభావితం చేస్తుంది. వాయువులలో కణాల మధ్య ఖాళీలు ఎక్కువగా ఉండటం వల్ల అవి వేగంగా కరిగి వ్యాపిస్తాయి.</div>
+            </div>
+
+            <h3>Multiple Choice Questions (బహుళైచ్ఛిక ప్రశ్నలు)</h3>
+
+            <div class="bilingual-box">
+                <div class="english-text">
+                    <strong>1. Which of the following is available in three states in our daily life (at normal conditions):</strong><br>
+                    (a) Petrol (b) Water (c) Milk (d) Kerosene<br>
+                    <strong>Answer: (b) Water</strong>
+                </div>
+                <div class="telugu-text">
+                    <strong>1. మన దైనందిన జీవితంలో సాధారణ పరిస్థితులలో మూడు స్థితులలో లభించేది:</strong><br>
+                    (ఎ) పెట్రోల్ (బి) నీరు (సి) పాలు (డి) కెరోసిన్<br>
+                    <strong>జవాబు: (బి) నీరు</strong>
+                </div>
+            </div>
+
+            <div class="bilingual-box">
+                <div class="english-text">
+                    <strong>2. Which of the following can be compressed:</strong><br>
+                    (a) Iron (b) Water (c) Air (d) Wooden piece<br>
+                    <strong>Answer: (c) Air</strong>
+                </div>
+                <div class="telugu-text">
+                    <strong>2. క్రింది వాటిలో దేనిని సంపీడనం (Compress) చేయవచ్చు:</strong><br>
+                    (ఎ) ఇనుము (బి) నీరు (సి) గాలి (డి) చెక్క ముక్క<br>
+                    <strong>జవాబు: (సి) గాలి</strong>
+                </div>
+            </div>
+
+            <div class="bilingual-box">
+                <div class="english-text">
+                    <strong>3. In which of the following substance speed of diffusion is more:</strong><br>
+                    (a) Smell of petrol (b) Smell from flowers (c) Smell from naphthaline balls (d) Gas leaked from gas cylinder<br>
+                    <strong>Answer: (d) Gas leaked from gas cylinder</strong>
+                </div>
+                <div class="telugu-text">
+                    <strong>3. క్రింది పదార్థాలలో దేనిలో వ్యాపన వేగం ఎక్కువగా ఉంటుంది:</strong><br>
+                    (ఎ) పెట్రోల్ వాసన (బి) పువ్వుల వాసన (సి) నాఫ్తలీన్ బంతుల వాసన (డి) గ్యాస్ సిలిండర్ నుండి లీకైన వాయువు<br>
+                    <strong>జవాబు: (డి) గ్యాస్ సిలిండర్ నుండి లీకైన వాయువు</strong>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" onclick="scrollToTop()">↑</button>
+
+    <script>
+        let startTime = Date.now();
+        let visitorData = {};
+
+        // Handle Visitor Modal Form Submission
+        document.getElementById('visitorForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('visitorName').value;
+            const roll = document.getElementById('visitorRoll').value;
+            
+            if(name && roll) {
+                visitorData = {
+                    name: name,
+                    rollNumber: roll,
+                    loginTime: new Date().toISOString()
+                };
+                document.getElementById('visitorModal').style.display = 'none';
+                startTimer();
+            }
+        });
+
+        // Track Time
+        function startTimer() {
+            setInterval(() => {
+                let secondsElapsed = Math.floor((Date.now() - startTime) / 1000);
+                document.getElementById('timerDisplay').innerText = `Time Spent: ${secondsElapsed}s`;
+            }, 1000);
+        }
+
+        // Send Report on Page Leave
+        window.addEventListener('beforeunload', function() {
+            let totalSeconds = Math.floor((Date.now() - startTime) / 1000);
+            visitorData.timeSpentSeconds = totalSeconds;
+            visitorData.logoutTime = new Date().toISOString();
+
+            console.log("Reporting visitor data to balaswamysm@gmail.com:", visitorData);
+        });
+
+        // Scroll to Top Logic
+        window.onscroll = function() {
+            let btn = document.getElementById('scrollTopBtn');
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                btn.style.display = "flex";
+            } else {
+                btn.style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
+</body>
+</html>
